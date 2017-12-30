@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="TensorFlow,深度学习,人工智能,机器学习,神经网络," />
 
 
 
@@ -99,16 +99,28 @@
 
 
 
-<meta name="description" content="Machine Learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="人工智能随笔">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言在做深度学习有关学习研究中，少不了使用可视化工具，TensorFlow中提供了自带的可视化工具。这样训练模型时候可以看到模型学习的实时状况，对于调整参数来说，确实帮助很大。下面动手简单的实现TensorBoard可视化功能。">
+<meta name="keywords" content="TensorFlow,深度学习,人工智能,机器学习,神经网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记（六）TensorFlow可视化TensorBoard">
+<meta property="og:url" content="http://yoursite.com/2017/12/30/学习笔记（六）tensorflow可视化tensorboard/index.html">
 <meta property="og:site_name" content="人工智能随笔">
-<meta property="og:description" content="Machine Learning">
+<meta property="og:description" content="前言在做深度学习有关学习研究中，少不了使用可视化工具，TensorFlow中提供了自带的可视化工具。这样训练模型时候可以看到模型学习的实时状况，对于调整参数来说，确实帮助很大。下面动手简单的实现TensorBoard可视化功能。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/head.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/result.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/graph.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/graph2.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/loss.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/histograms_w1.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/histograms_w2.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/w1.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/06/w2.jpg">
+<meta property="og:updated_time" content="2017-12-30T08:20:05.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人工智能随笔">
-<meta name="twitter:description" content="Machine Learning">
+<meta name="twitter:title" content="学习笔记（六）TensorFlow可视化TensorBoard">
+<meta name="twitter:description" content="前言在做深度学习有关学习研究中，少不了使用可视化工具，TensorFlow中提供了自带的可视化工具。这样训练模型时候可以看到模型学习的实时状况，对于调整参数来说，确实帮助很大。下面动手简单的实现TensorBoard可视化功能。">
+<meta name="twitter:image" content="http://yoursite.com/image/article/tensorflow_note/06/head.jpg">
 
 
 
@@ -138,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/30/学习笔记（六）tensorflow可视化tensorboard/"/>
 
 
 
 
 
-  <title>人工智能随笔</title>
+  <title>学习笔记（六）TensorFlow可视化TensorBoard | 人工智能随笔</title>
   
 
 
@@ -163,8 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,9 +302,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -323,9 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/30/学习笔记（六）tensorflow可视化tensorboard/" itemprop="url">学习笔记（六）TensorFlow可视化TensorBoard</a></h1>
+          <h1 class="post-title" itemprop="name headline">学习笔记（六）TensorFlow可视化TensorBoard</h1>
         
 
         <div class="post-meta">
@@ -408,510 +417,54 @@
       
 
       
-        
-          <!--配图-->
+        <!--配图-->
 <p><img src="/image/article/tensorflow_note/06/head.jpg" alt="image"></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在做深度学习有关学习研究中，少不了使用可视化工具，TensorFlow中提供了自带的可视化工具。这样训练模型时候可以看到模型学习的实时状况，对于调整参数来说，确实帮助很大。下面动手简单的实现TensorBoard可视化功能。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/30/学习笔记（六）tensorflow可视化tensorboard/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半醉残影">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/ico/favicon.ico">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="人工智能随笔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/18/学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别/" itemprop="url">学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T21:04:10+08:00">
-                2017-12-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TensorFlow笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/12/18/学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别/" class="leancloud_visitors" data-flag-title="学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!--配图-->
-<p><img src="/image/article/tensorflow_note/05/head.jpg" alt="image"></p>
-<h2 id="卷积神经网络MNIST手写数字识别"><a href="#卷积神经网络MNIST手写数字识别" class="headerlink" title="卷积神经网络MNIST手写数字识别"></a>卷积神经网络MNIST手写数字识别</h2><p>MNIST手写数学识别就像C语言的“hello world”一样，是学习人工智能和图片识别经典必修例子。</p>
-<p>MNIST数据库介绍：MNIST是一个手写数字数据库，它有60000个训练样本集和10000个测试样本集。它是NIST数据库的一个子集。</p>
-<p>MNIST数据库可以去<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener"><strong>官网</strong></a>下载，也可以直接在代码中自动下载，train-images-idx3-ubyte.gz、train-labels-idx1-ubyte.gz等。下载四个文件，解压缩。解压缩后发现这些文件并不是标准的图像格式。这些图像数据都保存在二进制文件中。每个样本图像的宽高为28*28。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/18/学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/学习笔记（三）tensorflow完整神经网络算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半醉残影">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/ico/favicon.ico">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="人工智能随笔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/学习笔记（三）tensorflow完整神经网络算法/" itemprop="url">学习笔记（三）tensorflow完整神经网络算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T21:04:15+08:00">
-                2017-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TensorFlow笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/12/10/学习笔记（三）tensorflow完整神经网络算法/" class="leancloud_visitors" data-flag-title="学习笔记（三）tensorflow完整神经网络算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!--配图-->
-<p><img src="/image/article/tensorflow_note/03/head.jpg" alt="image"></p>
-<h2 id="完整神经网络"><a href="#完整神经网络" class="headerlink" title="完整神经网络"></a>完整神经网络</h2><p>经过前面的学习，对一个完整神经网路的实践已经迫不及待，下面的代码将展示关于神经网络的完整结构</p>
-<ol>
-<li>定义输入占位符和反向传播占位符</li>
-<li>初始化权值及偏置</li>
-<li>定义前向传播过程</li>
-<li>定义损失函数交叉熵</li>
-<li>创建一个会话来运行</li>
-<li>使用样本训练并更新参数</li>
-<li>得到最终结果权值</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/10/学习笔记（三）tensorflow完整神经网络算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半醉残影">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/ico/favicon.ico">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="人工智能随笔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/" itemprop="url">学习笔记（二）tensorflow神经网络前向传播算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T20:01:15+08:00">
-                2017-12-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TensorFlow笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/" class="leancloud_visitors" data-flag-title="学习笔记（二）tensorflow神经网络前向传播算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!--配图-->
-<p><img src="/image/article/tensorflow_note/02/head.jpg" alt="image"></p>
-<h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><p>程序员学习的时候最重要的就是实践，以下代码是我自己手写，在自己搭建的jupyter tensorflow交互式环境下运行生成的。</p>
+<a id="more"></a>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>要使用TensorFlow可视化工具TensorBoard首先需要在代码中设置需要观察的点。</p>
+<p>一般像权值这样的向量用histogram来记录。如示例代码1中tf.summary.histogram(‘w1’, w1)就是记录权值w1；第一个参数为该记录的名字name，第二个参数为记录的值。</p>
 <blockquote>
-<p>要使用tensorflow首先需要导入tensorflow模块</p>
+<p>示例代码1</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">with tf.name_scope(&quot;Weight&quot;):</div><div class="line">    w1 = tf.Variable(tf.random_normal([2,3],stddev=1),name=&quot;w1&quot;)</div><div class="line">    w2 = tf.Variable(tf.random_normal([3,1],stddev=1),name=&quot;w2&quot;)</div><div class="line">    tf.summary.histogram(&apos;w1&apos;, w1)</div><div class="line">    tf.summary.histogram(&apos;w2&apos;, w2)</div></pre></td></tr></table></figure>
+<p>对于loss，一般用scalar记录。如下代码所示，和histogram用法一样。</p>
+<blockquote>
+<p>示例代码2</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tf.summary.scalar(&apos;cross_entropy&apos;, cross_entropy)</div></pre></td></tr></table></figure>
+<p>因为之前定义了多个summary，逐一执行太过麻烦，所以这里使用tf.summary.merge_all()直接获取所有汇总操作。</p>
+<blockquote>
+<p>示例代码3</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">merged = tf.summary.merge_all()</div></pre></td></tr></table></figure>
+<p>然后定义文件记录器，存放训练的日志数据。将Session的计算图加入到训练过程的记录器，这样在TensorBoard的GRAPHS窗口中就能展示整个计算图的可视化效果。</p>
+<blockquote>
+<p>示例代码4</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">writer = tf.summary.FileWriter(&quot;/home/dylan/study/jupyter/log&quot;, sess.graph)</div></pre></td></tr></table></figure>
+<p>最后一步，计算在当前状态下所有的summary，并将结果写入日志数据中。</p>
+<blockquote>
+<p>示例代码5</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">summary,total_cross_entropy = sess.run([merged,cross_entropy],feed_dict=&#123;x:X,y_:Y&#125;)</div><div class="line">writer.add_summary(summary, i)</div></pre></td></tr></table></figure>
+<h4 id="完整示例代码"><a href="#完整示例代码" class="headerlink" title="完整示例代码"></a>完整示例代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line"># 神经网络</div><div class="line">import tensorflow as tf</div><div class="line">from numpy.random import RandomState</div><div class="line"></div><div class="line">tf.reset_default_graph()</div><div class="line"></div><div class="line">#定义训练数据batch大小</div><div class="line">batch_size = 8</div><div class="line"></div><div class="line">#权值</div><div class="line">with tf.name_scope(&quot;Weight&quot;):</div><div class="line">    w1 = tf.Variable(tf.random_normal([2,3],stddev=1),name=&quot;w1&quot;)</div><div class="line">    w2 = tf.Variable(tf.random_normal([3,1],stddev=1),name=&quot;w2&quot;)</div><div class="line">    tf.summary.histogram(&apos;w1&apos;, w1)</div><div class="line">    tf.summary.histogram(&apos;w2&apos;, w2)</div><div class="line">with tf.name_scope(&quot;Biases&quot;):</div><div class="line">    b1 = tf.Variable(tf.zeros([1, 3]) + 0.1, name=&apos;b1&apos;)</div><div class="line">    b2 = tf.Variable(tf.zeros([1, 1]) + 0.1, name=&apos;b2&apos;)</div><div class="line">#定义输入占位符和反向传播占位符</div><div class="line">with tf.name_scope(&quot;Input&quot;):</div><div class="line">    x = tf.placeholder(tf.float32, shape=(None,2), name=&quot;x-input&quot;)</div><div class="line">    y_ = tf.placeholder(tf.float32, shape=(None,1), name=&quot;y-input&quot;)</div><div class="line"></div><div class="line">#定义前向传播过程</div><div class="line">with tf.name_scope(&quot;Layer&quot;):</div><div class="line">    a = tf.add(tf.matmul(x,w1),b1)</div><div class="line">with tf.name_scope(&quot;Output&quot;):</div><div class="line">    y = tf.nn.relu(tf.add(tf.matmul(a,w2),b2))</div><div class="line">#定义损失函数</div><div class="line">with tf.name_scope(&quot;loss&quot;):</div><div class="line">    cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y,1e-10,1.0)))</div><div class="line">    tf.summary.scalar(&apos;cross_entropy&apos;, cross_entropy)</div><div class="line">with tf.name_scope(&quot;train&quot;):</div><div class="line">    train_step = tf.train.AdamOptimizer(0.0005).minimize(cross_entropy)</div><div class="line"></div><div class="line">#通过随机数产生模拟数据集</div><div class="line">rdm = RandomState(1)</div><div class="line">dataset_size = 128</div><div class="line">X = rdm.rand(dataset_size,2)</div><div class="line">Y = [[int(x1+x2&lt;1)] for (x1,x2) in X]</div><div class="line">#print(X)</div><div class="line">#print(Y)</div><div class="line">#创建一个会话来运行</div><div class="line">with tf.Session() as sess:</div><div class="line">    merged = tf.summary.merge_all()</div><div class="line">    writer = tf.summary.FileWriter(&quot;/home/dylan/study/jupyter/log&quot;, sess.graph)</div><div class="line">    tf.global_variables_initializer().run()</div><div class="line">    #print(sess.run(w1))</div><div class="line">    #print(sess.run(w2))</div><div class="line">    </div><div class="line">    STEPS = 5000</div><div class="line">    for i in range(STEPS):</div><div class="line">        start = (i * batch_size) % dataset_size</div><div class="line">        end = min(start+batch_size,dataset_size)</div><div class="line">        #使用样本训练并更新参数</div><div class="line">        sess.run(train_step,feed_dict=&#123;x:X[start:end],y_:Y[start:end]&#125;)</div><div class="line">        if i % 200 == 0:</div><div class="line">            #计算一段时间内的交叉熵并输出</div><div class="line">            summary,total_cross_entropy = sess.run([merged,cross_entropy],feed_dict=&#123;x:X,y_:Y&#125;)</div><div class="line">            print(&quot;After %d training step(s),cross_entropy on all data is %g&quot; % (i,total_cross_entropy))</div><div class="line">            writer.add_summary(summary, i)</div><div class="line">        </div><div class="line">    #print(sess.run(w1))</div><div class="line">    #print(sess.run(w2))</div><div class="line">    #writer = tf.summary.FileWriter(&quot;./log&quot;,tf.get_default_graph())</div><div class="line">    writer.close()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>输出</p>
+</blockquote>
+<p><img src="/image/article/tensorflow_note/06/result.jpg" alt="image01"></p>
+<blockquote>
+<p>运行结果图（神经网络结构图）</p>
+</blockquote>
+<p><img src="/image/article/tensorflow_note/06/graph.jpg" alt="image01"><br><img src="/image/article/tensorflow_note/06/graph2.jpg" alt="image01"></p>
+<blockquote>
+<p>运行结果图（交叉熵），可以看到交叉熵在不断减小，说明神经网络学到东西了。</p>
+</blockquote>
+<p><img src="/image/article/tensorflow_note/06/loss.jpg" alt="image01"></p>
+<blockquote>
+<p>运行结果图 （权值w1,w2）</p>
+</blockquote>
+<p><img src="/image/article/tensorflow_note/06/histograms_w1.jpg" alt="image01"><br><img src="/image/article/tensorflow_note/06/histograms_w2.jpg" alt="image01"><br><img src="/image/article/tensorflow_note/06/w1.jpg" alt="image01"><br><img src="/image/article/tensorflow_note/06/w2.jpg" alt="image01"></p>
+
       
     </div>
     
@@ -921,347 +474,78 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/image/reward/wechat.jpg" alt="半醉残影 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/image/reward/alipay.jpg" alt="半醉残影 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/学习笔记（一）tensorflow+jupyter交互式环境搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半醉残影">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/ico/favicon.ico">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="人工智能随笔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/20/学习笔记（一）tensorflow+jupyter交互式环境搭建/" itemprop="url">学习笔记（一）tensorflow+jupyter交互式环境搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T21:04:15+08:00">
-                2017-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TensorFlow笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
           
-
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
           
-            
+            <a href="/tags/人工智能/" rel="tag"># 人工智能</a>
           
-
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
+            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
           
-             <span id="/2017/11/20/学习笔记（一）tensorflow+jupyter交互式环境搭建/" class="leancloud_visitors" data-flag-title="学习笔记（一）tensorflow+jupyter交互式环境搭建">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <!--配图-->
-<p><img src="/image/article/tensorflow_note/01/head.jpg" alt="image"></p>
-<h2 id="tensorflow环境搭建"><a href="#tensorflow环境搭建" class="headerlink" title="tensorflow环境搭建"></a>tensorflow环境搭建</h2><p>经过对吴恩达机器学习课程的学习，理解了有关机器学习的基本理论，于是向着兴趣深度学习（deep learning）迈进。</p>
-<h3 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h3><ol>
-<li>安装Ubuntu</li>
-<li>安装Python</li>
-<li>安装Pip</li>
-<li>安装Tensorflow</li>
-<li>安装Jupyter</li>
-<li>安装Nginx</li>
-<li>绑定域名</li>
-<li>使用交互式环境开发</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/20/学习笔记（一）tensorflow+jupyter交互式环境搭建/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/18/学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别/" rel="next" title="学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别">
+                <i class="fa fa-chevron-left"></i> 学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/08/13/品三国/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半醉残影">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/ico/favicon.ico">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="人工智能随笔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/08/13/品三国/" itemprop="url">品三国</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-08-13T19:36:15+08:00">
-                2012-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2012/08/13/品三国/" class="leancloud_visitors" data-flag-title="品三国">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <!--配图-->
-<p><img src="/image/article/品三国.jpg" alt="image"></p>
-<p>三品三国：<br>　　一品三国，觉张飞之猛，关羽之傲，赵云之勇，天下无敌！<br>　　二品三国，察孔明之智，公瑾之谋，仲达之奸，无之匹敌！<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/08/13/品三国/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1271,10 +555,49 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1282,6 +605,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDk0NS83NDk0"></div>
+    
+  </div>
+
 
         </div>
         
@@ -1302,8 +631,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -1382,6 +720,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤"><span class="nav-number">2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完整示例代码"><span class="nav-number">2.2.</span> <span class="nav-text">完整示例代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1518,6 +872,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1546,6 +904,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
