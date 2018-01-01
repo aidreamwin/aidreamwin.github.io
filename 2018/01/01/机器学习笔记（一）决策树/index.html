@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="TensorFlow,深度学习,人工智能,机器学习,神经网络," />
+  <meta name="keywords" content="人工智能,机器学习," />
 
 
 
@@ -99,20 +99,23 @@
 
 
 
-<meta name="description" content="神经网络程序员学习的时候最重要的就是实践，以下代码是我自己手写，在自己搭建的jupyter tensorflow交互式环境下运行生成的。  要使用tensorflow首先需要导入tensorflow模块  1import tensorflow as tf">
-<meta name="keywords" content="TensorFlow,深度学习,人工智能,机器学习,神经网络">
+<meta name="description" content="DecisionTree 决策树前言判定树是一个类似于流程图的树结构：其中，每个内部结点表示在一个属性上的测试，每个分支代表一个属性输出，而每个树叶结点代表类或类分布。树的最顶层是根结点。决策树是机器学习中的一个重要算法。  决策树的优点：  直观，便于理解，小规模数据集有效       决策树的缺点：  处理连续变量不好  类别较多时，错误增加的比较快  可规模性一般">
+<meta name="keywords" content="人工智能,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习笔记（二）tensorflow神经网络前向传播算法">
-<meta property="og:url" content="http://yoursite.com/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/index.html">
+<meta property="og:title" content="机器学习笔记（一）决策树">
+<meta property="og:url" content="http://yoursite.com/2018/01/01/机器学习笔记（一）决策树/index.html">
 <meta property="og:site_name" content="人工智能随笔">
-<meta property="og:description" content="神经网络程序员学习的时候最重要的就是实践，以下代码是我自己手写，在自己搭建的jupyter tensorflow交互式环境下运行生成的。  要使用tensorflow首先需要导入tensorflow模块  1import tensorflow as tf">
+<meta property="og:description" content="DecisionTree 决策树前言判定树是一个类似于流程图的树结构：其中，每个内部结点表示在一个属性上的测试，每个分支代表一个属性输出，而每个树叶结点代表类或类分布。树的最顶层是根结点。决策树是机器学习中的一个重要算法。  决策树的优点：  直观，便于理解，小规模数据集有效       决策树的缺点：  处理连续变量不好  类别较多时，错误增加的比较快  可规模性一般">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/02/head.jpg">
-<meta property="og:updated_time" content="2017-12-29T16:00:14.976Z">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/decisiontree/head.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/decisiontree/datadot.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/decisiontree/savefile.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/decisiontree/result.jpg">
+<meta property="og:updated_time" content="2018-01-01T17:28:26.053Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习笔记（二）tensorflow神经网络前向传播算法">
-<meta name="twitter:description" content="神经网络程序员学习的时候最重要的就是实践，以下代码是我自己手写，在自己搭建的jupyter tensorflow交互式环境下运行生成的。  要使用tensorflow首先需要导入tensorflow模块  1import tensorflow as tf">
-<meta name="twitter:image" content="http://yoursite.com/image/article/tensorflow_note/02/head.jpg">
+<meta name="twitter:title" content="机器学习笔记（一）决策树">
+<meta name="twitter:description" content="DecisionTree 决策树前言判定树是一个类似于流程图的树结构：其中，每个内部结点表示在一个属性上的测试，每个分支代表一个属性输出，而每个树叶结点代表类或类分布。树的最顶层是根结点。决策树是机器学习中的一个重要算法。  决策树的优点：  直观，便于理解，小规模数据集有效       决策树的缺点：  处理连续变量不好  类别较多时，错误增加的比较快  可规模性一般">
+<meta name="twitter:image" content="http://yoursite.com/image/article/ml_note/decisiontree/head.jpg">
 
 
 
@@ -142,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/01/机器学习笔记（一）决策树/"/>
 
 
 
 
 
-  <title>学习笔记（二）tensorflow神经网络前向传播算法 | 人工智能随笔</title>
+  <title>机器学习笔记（一）决策树 | 人工智能随笔</title>
   
 
 
@@ -309,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/01/机器学习笔记（一）决策树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半醉残影">
@@ -326,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学习笔记（二）tensorflow神经网络前向传播算法</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习笔记（一）决策树</h1>
         
 
         <div class="post-meta">
@@ -338,8 +341,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T20:01:15+08:00">
-                2017-12-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-01T21:04:15+08:00">
+                2018-01-01
               </time>
             
 
@@ -361,8 +364,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TensorFlow笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow笔记</span>
+                  <a href="/categories/机器学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习笔记</span>
                   </a>
                 </span>
 
@@ -378,7 +381,7 @@
 
           
           
-             <span id="/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/" class="leancloud_visitors" data-flag-title="学习笔记（二）tensorflow神经网络前向传播算法">
+             <span id="/2018/01/01/机器学习笔记（一）决策树/" class="leancloud_visitors" data-flag-title="机器学习笔记（一）决策树">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,54 +413,233 @@
 
       
         <!--配图-->
-<p><img src="/image/article/tensorflow_note/02/head.jpg" alt="image"></p>
-<h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><p>程序员学习的时候最重要的就是实践，以下代码是我自己手写，在自己搭建的jupyter tensorflow交互式环境下运行生成的。</p>
-<blockquote>
-<p>要使用tensorflow首先需要导入tensorflow模块</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div></pre></td></tr></table></figure>
+<p><img src="/image/article/ml_note/decisiontree/head.jpg" alt="image"></p>
+<h1 id="DecisionTree-决策树"><a href="#DecisionTree-决策树" class="headerlink" title="DecisionTree 决策树"></a>DecisionTree 决策树</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>判定树是一个类似于流程图的树结构：其中，每个内部结点表示在一个属性上的测试，每个分支代表一个属性输出，而每个树叶结点代表类或类分布。树的最顶层是根结点。决策树是机器学习中的一个重要算法。</p>
+<ol>
+<li><p>决策树的优点：<br>  直观，便于理解，小规模数据集有效     </p>
+</li>
+<li><p>决策树的缺点：<br>  处理连续变量不好<br>  类别较多时，错误增加的比较快<br>  可规模性一般</p>
+</li>
+</ol>
 <a id="more"></a>
-<h3 id="constant"><a href="#constant" class="headerlink" title="constant"></a>constant</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a = tf.constant([<span class="number">1.0</span>,<span class="number">2.0</span>],name=<span class="string">"a"</span>,dtype=tf.float64)</div><div class="line">b = tf.constant([<span class="number">2.0</span>,<span class="number">3.0</span>],name=<span class="string">"b"</span>,dtype=tf.float64)</div><div class="line">result = a + b</div><div class="line">print(result)</div><div class="line">sess = tf.Session()</div><div class="line">x = sess.run(result)</div><div class="line">print(result)</div><div class="line">print(x)</div><div class="line">sess.close()</div></pre></td></tr></table></figure>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><ul>
+<li>ID3 (Information Gain)</li>
+<li>C4.5 （gain ratio):  Quinlan</li>
+<li>Classification and Regression Trees (CART): (L. Breiman, J. Friedman, R. Olshen, C. Stone)</li>
+<li>共同点：都是贪心算法，自上而下(Top-down approach)</li>
+<li>区别：属性选择度量方法不同</li>
+</ul>
+<p>这里介绍的ID3算法，ID3主要用的信息熵的分类方法。</p>
+<h3 id="ID3法DecisionTree"><a href="#ID3法DecisionTree" class="headerlink" title="ID3法DecisionTree"></a>ID3法DecisionTree</h3><h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>信息是个很抽象的概念。人们常常说信息很多，或者信息较少，但却很难说清楚信息到底有多少。比如一本五十万字的中文书到底有多少信息量。<br>直到1948年，香农提出了“信息熵”的概念，才解决了对信息的量化度量问题。信息熵这个词是C．E．香农从热力学中借用过来的。热力学中的热熵是表示分子状态混乱程度的物理量。香农用信息熵的概念来描述信源的不确定度。<br>信息论之父克劳德·艾尔伍德·香农第一次用数学语言阐明了概率与信息冗余度的关系。</p>
+<h4 id="信息熵计算公式"><a href="#信息熵计算公式" class="headerlink" title="信息熵计算公式"></a>信息熵计算公式</h4><p>H(x) = E[I(xi)] = E[ log(2,1/p(xi)) ] = -∑p(xi)log(2,p(xi)) (i=1,2,..n)</p>
+<p>其中，x表示随机变量，与之相对应的是所有可能输出的集合，定义为符号集,随机变量的输出用x表示。P(x)表示输出概率函数。变量的不确定性越大，熵也就越大，把它搞清楚所需要的信息量也就越大.</p>
+<h4 id="信息获取量"><a href="#信息获取量" class="headerlink" title="信息获取量"></a>信息获取量</h4><p>信息获取量(Information Gain)：Gain(A) = Info(B) - Info_A(B)</p>
+<p>通过A来作为节点分类获取了多少信息</p>
 <blockquote>
-<p>输出</p>
+<p>算法演示，下面的表格为决策树需要处理的数据。</p>
 </blockquote>
-<pre><code>Tensor(&quot;add_6:0&quot;, shape=(2,), dtype=float64)
-Tensor(&quot;add_6:0&quot;, shape=(2,), dtype=float64)
-[ 3.  5.]
-</code></pre><p>add_3:0表示result这个张量是计算节点“add”输出的第一个结果（编号从0开始）</p>
-<h3 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h3><blockquote>
-<p>tensorflow的运算必须在会话（session）中计算</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a = tf.constant([<span class="number">1.0</span>,<span class="number">2.0</span>],name=<span class="string">"a"</span>,dtype=tf.float64)</div><div class="line">b = tf.constant([<span class="number">2.0</span>,<span class="number">3.0</span>],name=<span class="string">"b"</span>,dtype=tf.float64)</div><div class="line">result = a + b</div><div class="line">print(result)</div><div class="line"><span class="comment">#交互式会话，使用这个函数会自动的将生成的会话注册为默认会话</span></div><div class="line">sess = tf.InteractiveSession()</div><div class="line"><span class="comment">#sess = tf.Session()</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    print(result.eval())</div><div class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">    print(e)</div><div class="line">    sess.close()</div><div class="line">sess.close()</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>RID</th>
+<th>age</th>
+<th>income</th>
+<th>student</th>
+<th>credit_rating</th>
+<th>buy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>youth</td>
+<td>high</td>
+<td>no</td>
+<td>fair</td>
+<td>no</td>
+</tr>
+<tr>
+<td>2</td>
+<td>youth</td>
+<td>high</td>
+<td>no</td>
+<td>excellent</td>
+<td>no</td>
+</tr>
+<tr>
+<td>3</td>
+<td>middle_aged</td>
+<td>high</td>
+<td>no</td>
+<td>fair</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>senior</td>
+<td>medium</td>
+<td>no</td>
+<td>fair</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>senior</td>
+<td>low</td>
+<td>yes</td>
+<td>fair</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>6</td>
+<td>senior</td>
+<td>low</td>
+<td>yes</td>
+<td>excellent</td>
+<td>no</td>
+</tr>
+<tr>
+<td>7</td>
+<td>middle_aged</td>
+<td>low</td>
+<td>yes</td>
+<td>excellent</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>youth</td>
+<td>medium</td>
+<td>no</td>
+<td>fair</td>
+<td>no</td>
+</tr>
+<tr>
+<td>9</td>
+<td>youth</td>
+<td>low</td>
+<td>yes</td>
+<td>fair</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>10</td>
+<td>senior</td>
+<td>medium</td>
+<td>yes</td>
+<td>fair</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>11</td>
+<td>youth</td>
+<td>medium</td>
+<td>yes</td>
+<td>excellent</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>12</td>
+<td>middle_aged</td>
+<td>medium</td>
+<td>no</td>
+<td>excellent</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>13</td>
+<td>middle_aged</td>
+<td>high</td>
+<td>yes</td>
+<td>fair</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>14</td>
+<td>senior</td>
+<td>medium</td>
+<td>no</td>
+<td>excellent</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>首先我选择计算在没有任何特征值情况下的信息熵。这里令class_buys_computer=B，计算如下：</p>
+<p>Info(class_buys_computer) = Info(B)</p>
+<p>Info(B) = -5/14 <em> log(5/14,2) - 9/14 </em> log(9/14,2)</p>
+<p>同理，令 age=A，则Info_A(B)表示用字段A得到字段B需要的信息量</p>
+<p>Info_A(B) = 5/14 <em> (-3/5 </em> log(3/5,2)-2/5 <em> log(2/5,2)) + 4/14 </em> (-4/4 <em> log(4/4,2)) + 5/14 </em> (-3/5 <em> log(3/5,2) - 2/5 </em> log(2/5,2))</p>
+<p>Gain(A) = Info(B) - Info_A(B)</p>
 <blockquote>
-<p>输出</p>
+<p>用python计算下</p>
 </blockquote>
-<pre><code>Tensor(&quot;add_10:0&quot;, shape=(2,), dtype=float64)
-[ 3.  5.]
-</code></pre><h3 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#随机生成矩阵，正态分布，标准差stddev=2</span></div><div class="line">weights = tf.Variable(tf.random_normal([<span class="number">2</span>,<span class="number">3</span>],stddev=<span class="number">2</span>,dtype=tf.float64),name=<span class="string">"weights"</span>)</div><div class="line">print(weights)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> log</div><div class="line">Info_B = <span class="number">-5</span>/<span class="number">14</span> * log(<span class="number">5</span>/<span class="number">14</span>,<span class="number">2</span>) - <span class="number">9</span>/<span class="number">14</span> * log(<span class="number">9</span>/<span class="number">14</span>,<span class="number">2</span>)</div><div class="line">print(<span class="string">"Info(B) ="</span>,Info_B)</div><div class="line"></div><div class="line">Info_A_B = <span class="number">5</span>/<span class="number">14</span> * (<span class="number">-3</span>/<span class="number">5</span> * log(<span class="number">3</span>/<span class="number">5</span>,<span class="number">2</span>)<span class="number">-2</span>/<span class="number">5</span> * log(<span class="number">2</span>/<span class="number">5</span>,<span class="number">2</span>)) + <span class="number">4</span>/<span class="number">14</span> * (<span class="number">-4</span>/<span class="number">4</span> * log(<span class="number">4</span>/<span class="number">4</span>,<span class="number">2</span>)) + <span class="number">5</span>/<span class="number">14</span> * (<span class="number">-3</span>/<span class="number">5</span> * log(<span class="number">3</span>/<span class="number">5</span>,<span class="number">2</span>) - <span class="number">2</span>/<span class="number">5</span> * log(<span class="number">2</span>/<span class="number">5</span>,<span class="number">2</span>))</div><div class="line">print(<span class="string">"Info_A(B) ="</span>,Info_A_B)</div><div class="line"></div><div class="line">Gain_A = Info_B - Info_A_B</div><div class="line">print(<span class="string">"Gain(A) ="</span>,Gain_A)</div></pre></td></tr></table></figure>
+<pre><code>Info(B) = 0.9402859586706309
+Info_A(B) = 0.6935361388961918
+Gain(A) = 0.2467498197744391
+</code></pre><p>由此，我们计算出Gain(age) = 0.2467498197744391,同理求出其他特征的信息获取量。最终发现age的信息获取量最大，所以选age为根结点。用这样的方式继续选择下一个节点。</p>
+<h3 id="sklearn算法实现"><a href="#sklearn算法实现" class="headerlink" title="sklearn算法实现"></a>sklearn算法实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.feature_extraction <span class="keyword">import</span> DictVectorizer</div><div class="line"><span class="keyword">import</span> csv</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</div><div class="line"><span class="keyword">from</span> sklearn.externals.six <span class="keyword">import</span> StringIO</div><div class="line"></div><div class="line"><span class="comment"># 读取数据</span></div><div class="line">allData = open(<span class="string">r'./data/decisiontree.csv'</span>, <span class="string">'rt'</span>)</div><div class="line">reader = csv.reader(allData)</div><div class="line">headers = next(reader)</div><div class="line"></div><div class="line">print(headers)</div><div class="line"></div><div class="line"><span class="comment"># 数据预处理</span></div><div class="line">featureList = []</div><div class="line">labelList = []</div><div class="line"></div><div class="line"><span class="keyword">for</span> row <span class="keyword">in</span> reader:</div><div class="line">    labelList.append(row[len(row)<span class="number">-1</span>])</div><div class="line">    rowDict = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(row)<span class="number">-1</span>):</div><div class="line">        rowDict[headers[i]] = row[i]</div><div class="line">    featureList.append(rowDict)</div><div class="line"></div><div class="line">print(featureList)</div><div class="line"></div><div class="line">vec = DictVectorizer()</div><div class="line">dummyX = vec.fit_transform(featureList) .toarray()</div><div class="line"></div><div class="line">print(<span class="string">"dummyX: \n"</span> + str(dummyX))</div><div class="line">print(vec.get_feature_names())</div><div class="line"></div><div class="line">print(<span class="string">"labelList: "</span> + str(labelList))</div><div class="line"></div><div class="line"><span class="comment"># vectorize class labels</span></div><div class="line">lb = preprocessing.LabelBinarizer()</div><div class="line">dummyY = lb.fit_transform(labelList)</div><div class="line">print(<span class="string">"dummyY: \n"</span> + str(dummyY))</div><div class="line"></div><div class="line"><span class="comment"># Using decision tree for classification</span></div><div class="line"><span class="comment"># clf = tree.DecisionTreeClassifier()</span></div><div class="line">clf = tree.DecisionTreeClassifier(criterion=<span class="string">'entropy'</span>)</div><div class="line">clf = clf.fit(dummyX, dummyY)</div><div class="line">print(<span class="string">"clf: "</span> + str(clf))</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Visualize model</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">"./save/decisiontreeGain.dot"</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</div><div class="line">    f = tree.export_graphviz(clf, feature_names=vec.get_feature_names(), out_file=f)</div><div class="line"></div><div class="line">oneRowX = dummyX[<span class="number">0</span>, :]</div><div class="line">print(<span class="string">"oneRowX: "</span> + str(oneRowX))</div><div class="line"></div><div class="line">newRowX = oneRowX</div><div class="line">newRowX[<span class="number">0</span>] = <span class="number">1</span></div><div class="line">newRowX[<span class="number">2</span>] = <span class="number">0</span></div><div class="line">print(<span class="string">"newRowX: "</span> + str(newRowX))</div><div class="line"></div><div class="line"><span class="comment"># 预测</span></div><div class="line">predictedY = clf.predict(newRowX.reshape(<span class="number">-1</span>, <span class="number">10</span>))</div><div class="line">print(<span class="string">"predictedY: "</span> + str(predictedY))</div></pre></td></tr></table></figure>
+<pre><code>[&apos;RID&apos;, &apos;age&apos;, &apos;income&apos;, &apos;student&apos;, &apos;credit_rating&apos;, &apos;class_buys_computer&apos;]
+[{&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;youth&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;high&apos;}, {&apos;credit_rating&apos;: &apos;excellent&apos;, &apos;age&apos;: &apos;youth&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;high&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;middle_aged&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;high&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;senior&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;medium&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;senior&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;low&apos;}, {&apos;credit_rating&apos;: &apos;excellent&apos;, &apos;age&apos;: &apos;senior&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;low&apos;}, {&apos;credit_rating&apos;: &apos;excellent&apos;, &apos;age&apos;: &apos;middle_aged&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;low&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;youth&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;medium&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;youth&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;low&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;senior&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;medium&apos;}, {&apos;credit_rating&apos;: &apos;excellent&apos;, &apos;age&apos;: &apos;youth&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;medium&apos;}, {&apos;credit_rating&apos;: &apos;excellent&apos;, &apos;age&apos;: &apos;middle_aged&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;medium&apos;}, {&apos;credit_rating&apos;: &apos;fair&apos;, &apos;age&apos;: &apos;middle_aged&apos;, &apos;student&apos;: &apos;yes&apos;, &apos;income&apos;: &apos;high&apos;}, {&apos;credit_rating&apos;: &apos;excellent&apos;, &apos;age&apos;: &apos;senior&apos;, &apos;student&apos;: &apos;no&apos;, &apos;income&apos;: &apos;medium&apos;}]
+dummyX: 
+[[ 0.  0.  1.  0.  1.  1.  0.  0.  1.  0.]
+ [ 0.  0.  1.  1.  0.  1.  0.  0.  1.  0.]
+ [ 1.  0.  0.  0.  1.  1.  0.  0.  1.  0.]
+ [ 0.  1.  0.  0.  1.  0.  0.  1.  1.  0.]
+ [ 0.  1.  0.  0.  1.  0.  1.  0.  0.  1.]
+ [ 0.  1.  0.  1.  0.  0.  1.  0.  0.  1.]
+ [ 1.  0.  0.  1.  0.  0.  1.  0.  0.  1.]
+ [ 0.  0.  1.  0.  1.  0.  0.  1.  1.  0.]
+ [ 0.  0.  1.  0.  1.  0.  1.  0.  0.  1.]
+ [ 0.  1.  0.  0.  1.  0.  0.  1.  0.  1.]
+ [ 0.  0.  1.  1.  0.  0.  0.  1.  0.  1.]
+ [ 1.  0.  0.  1.  0.  0.  0.  1.  1.  0.]
+ [ 1.  0.  0.  0.  1.  1.  0.  0.  0.  1.]
+ [ 0.  1.  0.  1.  0.  0.  0.  1.  1.  0.]]
+[&apos;age=middle_aged&apos;, &apos;age=senior&apos;, &apos;age=youth&apos;, &apos;credit_rating=excellent&apos;, &apos;credit_rating=fair&apos;, &apos;income=high&apos;, &apos;income=low&apos;, &apos;income=medium&apos;, &apos;student=no&apos;, &apos;student=yes&apos;]
+labelList: [&apos;no&apos;, &apos;no&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;no&apos;]
+dummyY: 
+[[0]
+ [0]
+ [1]
+ [1]
+ [1]
+ [0]
+ [1]
+ [0]
+ [1]
+ [1]
+ [1]
+ [1]
+ [1]
+ [0]]
+clf: DecisionTreeClassifier(class_weight=None, criterion=&apos;entropy&apos;, max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+            splitter=&apos;best&apos;)
+oneRowX: [ 0.  0.  1.  0.  1.  1.  0.  0.  1.  0.]
+newRowX: [ 1.  0.  0.  0.  1.  1.  0.  0.  1.  0.]
+predictedY: [1]
+</code></pre><blockquote>
+<p>生成的dot文件，里面包含的信息是决策树的文字描述，即描述了一幅图（决策树）。</p>
+</blockquote>
+<p><img src="/image/article/ml_note/decisiontree/datadot.jpg" alt="image"></p>
+<p>安装GRAPHVIZ</p>
 <blockquote>
-<p>输出</p>
+<p>$ sudo apt-get install graphviz</p>
 </blockquote>
-<pre><code>&lt;tf.Variable &apos;weights_8:0&apos; shape=(2, 3) dtype=float64_ref&gt;
-</code></pre><h3 id="前向传播算法"><a href="#前向传播算法" class="headerlink" title="前向传播算法"></a>前向传播算法</h3><blockquote>
-<p>神经网络的前向传播算法，简单的说就是矩阵的传播算法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">comm=<span class="string">"dot -Tpdf ./save/decisiontreeGain.dot -o ./save/decisiontree.pdf"</span></div><div class="line">result = os.system(comm)</div></pre></td></tr></table></figure>
+<pre><code>0
+</code></pre><blockquote>
+<p>运行结果</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="comment">#声明w1,w2两个变量，seed参数设定随机种子，这样保证每次运行的得到的结果一样</span></div><div class="line">w1 = tf.Variable(tf.random_normal([<span class="number">2</span>,<span class="number">3</span>], stddev=<span class="number">1</span>, seed=<span class="number">1</span>),name=<span class="string">"w1"</span>)</div><div class="line">w2 = tf.Variable(tf.random_normal([<span class="number">3</span>,<span class="number">1</span>], stddev=<span class="number">1</span>, seed=<span class="number">1</span>),name=<span class="string">"w2"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 假设输入的特征向量为一个常量，1*2的矩阵</span></div><div class="line">x = tf.constant([[<span class="number">0.7</span>,<span class="number">0.9</span>]],name=<span class="string">"x"</span>)</div><div class="line"></div><div class="line"><span class="comment">#前向传播算法</span></div><div class="line">a = tf.matmul(x,w1)</div><div class="line">y = tf.matmul(a,w2)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#初始化变量</span></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    <span class="comment">#writer = tf.train.SummaryWriter("./log",tf.get_default_graph())</span></div><div class="line">    writer = tf.summary.FileWriter(<span class="string">"./log"</span>,tf.get_default_graph()) </div><div class="line">    sess.run(tf.global_variables_initializer())</div><div class="line">    print(y.eval())</div><div class="line">    writer.close()</div></pre></td></tr></table></figure>
+<p><img src="/image/article/ml_note/decisiontree/savefile.jpg" alt="image"></p>
 <blockquote>
-<p>输出</p>
+<p>生成的决策树</p>
 </blockquote>
-<pre><code>[[ 3.95757794]]
-</code></pre><h3 id="placeholder和前向传播算法"><a href="#placeholder和前向传播算法" class="headerlink" title="placeholder和前向传播算法"></a>placeholder和前向传播算法</h3><blockquote>
-<p>通过使用placeholder 实现神经网络的前向传播，placeholder是tensorflow中的占位符</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line">w1 = tf.Variable(tf.random_normal([<span class="number">2</span>,<span class="number">3</span>],stddev=<span class="number">1</span>),name=<span class="string">"w1"</span>)</div><div class="line">w2 = tf.Variable(tf.random_normal([<span class="number">3</span>,<span class="number">1</span>],stddev=<span class="number">1</span>),name=<span class="string">"w2"</span>)</div><div class="line">x = tf.placeholder(tf.float32,shape=(<span class="number">3</span>,<span class="number">2</span>),name=<span class="string">"input"</span>)</div><div class="line">a = tf.matmul(x,w1)</div><div class="line">y = tf.matmul(a,w2)</div><div class="line"></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    init_op = tf.global_variables_initializer()</div><div class="line">    sess.run(init_op)</div><div class="line">    result = sess.run(y,feed_dict=&#123;x:[[<span class="number">0.7</span>,<span class="number">0.9</span>],[<span class="number">0.1</span>,<span class="number">0.4</span>],[<span class="number">0.5</span>,<span class="number">0.8</span>]]&#125;)</div><div class="line">    writer = tf.summary.FileWriter(<span class="string">"./log"</span>,tf.get_default_graph())</div><div class="line">    writer.close()</div><div class="line">    print(result)</div></pre></td></tr></table></figure>
-<blockquote>
-<p>输出</p>
-</blockquote>
-<pre><code>[[-4.83675146]
- [-1.65250468]
- [-4.0115037 ]]
-</code></pre><h3 id="损失函数、交叉熵"><a href="#损失函数、交叉熵" class="headerlink" title="损失函数、交叉熵"></a>损失函数、交叉熵</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#定义损失函数刻画与测试和真实值的差距,交叉熵</span></div><div class="line">cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y,<span class="number">1e-10</span>,<span class="number">1.0</span>)))</div><div class="line"></div><div class="line"><span class="comment">#定义学习率</span></div><div class="line">learning_rate = <span class="number">0.001</span></div><div class="line"></div><div class="line"><span class="comment">#定义反向传播算法优化参数，AdamOptimizer优化算法的一种，目前有7种</span></div><div class="line">train_step = tf.train.AdamOptimizer(learning_rate).minimize(cross_entropy)</div></pre></td></tr></table></figure>
+<p><img src="/image/article/ml_note/decisiontree/result.jpg" alt="image"></p>
 
       
     </div>
@@ -504,15 +686,9 @@ Tensor(&quot;add_6:0&quot;, shape=(2,), dtype=float64)
       
         <div class="post-tags">
           
-            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
-          
-            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
-          
             <a href="/tags/人工智能/" rel="tag"># 人工智能</a>
           
             <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
           
         </div>
       
@@ -525,8 +701,8 @@ Tensor(&quot;add_6:0&quot;, shape=(2,), dtype=float64)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/学习笔记（一）tensorflow+jupyter交互式环境搭建/" rel="next" title="学习笔记（一）tensorflow+jupyter交互式环境搭建">
-                <i class="fa fa-chevron-left"></i> 学习笔记（一）tensorflow+jupyter交互式环境搭建
+              <a href="/2017/12/30/学习笔记（七）tensorflow保存读取/" rel="next" title="学习笔记（七）tensorflow保存读取">
+                <i class="fa fa-chevron-left"></i> 学习笔记（七）tensorflow保存读取
               </a>
             
           </div>
@@ -534,10 +710,6 @@ Tensor(&quot;add_6:0&quot;, shape=(2,), dtype=float64)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/10/学习笔记（三）tensorflow完整神经网络算法/" rel="prev" title="学习笔记（三）tensorflow完整神经网络算法">
-                学习笔记（三）tensorflow完整神经网络算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +900,7 @@ Tensor(&quot;add_6:0&quot;, shape=(2,), dtype=float64)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constant"><span class="nav-number">1.1.</span> <span class="nav-text">constant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话"><span class="nav-number">1.2.</span> <span class="nav-text">会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variable"><span class="nav-number">1.3.</span> <span class="nav-text">Variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前向传播算法"><span class="nav-number">1.4.</span> <span class="nav-text">前向传播算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#placeholder和前向传播算法"><span class="nav-number">1.5.</span> <span class="nav-text">placeholder和前向传播算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#损失函数、交叉熵"><span class="nav-number">1.6.</span> <span class="nav-text">损失函数、交叉熵</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DecisionTree-决策树"><span class="nav-number">1.</span> <span class="nav-text">DecisionTree 决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法原理"><span class="nav-number">1.2.1.</span> <span class="nav-text">算法原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3法DecisionTree"><span class="nav-number">1.2.2.</span> <span class="nav-text">ID3法DecisionTree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信息熵"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">信息熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息熵计算公式"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">信息熵计算公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息获取量"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">信息获取量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sklearn算法实现"><span class="nav-number">1.2.3.</span> <span class="nav-text">sklearn算法实现</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
