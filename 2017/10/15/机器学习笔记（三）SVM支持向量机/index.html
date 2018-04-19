@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="人工智能,机器学习," />
 
 
 
@@ -99,16 +99,22 @@
 
 
 
-<meta name="description" content="Machine Learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="人工智能随笔">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+<meta name="description" content="SVM支持向量机前言支持向量机SVM(Support Vector Machine)是常见的一种判别方法。在机器学习领域，是一个有监督的学习模型，通常用来进行模式识别、分类以及回归分析。深度学习（2012）出现之前，SVM被认为机器学习中近十几年来最成功，表现最好的算法。">
+<meta name="keywords" content="人工智能,机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习笔记（三）SVM支持向量机">
+<meta property="og:url" content="http://yoursite.com/2017/10/15/机器学习笔记（三）SVM支持向量机/index.html">
 <meta property="og:site_name" content="人工智能随笔">
-<meta property="og:description" content="Machine Learning">
+<meta property="og:description" content="SVM支持向量机前言支持向量机SVM(Support Vector Machine)是常见的一种判别方法。在机器学习领域，是一个有监督的学习模型，通常用来进行模式识别、分类以及回归分析。深度学习（2012）出现之前，SVM被认为机器学习中近十几年来最成功，表现最好的算法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/svm/head.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/svm/2.jpg">
+<meta property="og:image" content="http://yoursite.com/image/article/ml_note/svm/result.jpg">
+<meta property="og:updated_time" content="2018-04-19T11:13:08.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人工智能随笔">
-<meta name="twitter:description" content="Machine Learning">
+<meta name="twitter:title" content="机器学习笔记（三）SVM支持向量机">
+<meta name="twitter:description" content="SVM支持向量机前言支持向量机SVM(Support Vector Machine)是常见的一种判别方法。在机器学习领域，是一个有监督的学习模型，通常用来进行模式识别、分类以及回归分析。深度学习（2012）出现之前，SVM被认为机器学习中近十几年来最成功，表现最好的算法。">
+<meta name="twitter:image" content="http://yoursite.com/image/article/ml_note/svm/head.jpg">
 
 
 
@@ -138,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/12/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/15/机器学习笔记（三）SVM支持向量机/"/>
 
 
 
 
 
-  <title>归档 | 人工智能随笔</title>
+  <title>机器学习笔记（三）SVM支持向量机 | 人工智能随笔</title>
   
 
 
@@ -163,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,222 +297,292 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/15/机器学习笔记（三）SVM支持向量机/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半醉残影">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/ico/favicon.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能随笔">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">机器学习笔记（三）SVM支持向量机</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-15T22:34:10+08:00">
+                2017-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2017/10/15/机器学习笔记（三）SVM支持向量机/" class="leancloud_visitors" data-flag-title="机器学习笔记（三）SVM支持向量机">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/30/学习笔记（七）tensorflow保存读取/" itemprop="url">
-              
-                <span itemprop="name">学习笔记（七）tensorflow保存读取</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-30T21:33:39+08:00"
-              content="2017-12-30" >
-          12-30
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/30/学习笔记（六）tensorflow可视化tensorboard/" itemprop="url">
-              
-                <span itemprop="name">学习笔记（六）TensorFlow可视化TensorBoard</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-30T09:24:10+08:00"
-              content="2017-12-30" >
-          12-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/18/学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别/" itemprop="url">
-              
-                <span itemprop="name">学习笔记（五）tensorflow卷积神经网络MNIST手写数字识别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-18T21:04:10+08:00"
-              content="2017-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/10/学习笔记（三）tensorflow完整神经网络算法/" itemprop="url">
-              
-                <span itemprop="name">学习笔记（三）tensorflow完整神经网络算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-10T21:04:15+08:00"
-              content="2017-12-10" >
-          12-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <!--配图-->
+<p><img src="/image/article/ml_note/svm/head.jpg" alt="image"></p>
+<h1 id="SVM支持向量机"><a href="#SVM支持向量机" class="headerlink" title="SVM支持向量机"></a>SVM支持向量机</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>支持向量机SVM(Support Vector Machine)是常见的一种判别方法。在机器学习领域，是一个有监督的学习模型，通常用来进行模式识别、分类以及回归分析。深度学习（2012）出现之前，SVM被认为机器学习中近十几年来最成功，表现最好的算法。</p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><p>基本原理是寻找区分两类的超平面（hyper plane), 使边际(margin)最大。SVM的核心思想是尽最大努力使分开的两个类别有最大间隔，这样才使得分隔具有更高的可信度。而且对于未知的新样本才有很好的分类预测能力（在机器学习中叫泛化能力）</p>
+<p>不太会打数学公式，SVM数学原理这里就不做说明了</p>
+<h4 id="线性不可分"><a href="#线性不可分" class="headerlink" title="线性不可分"></a>线性不可分</h4><ol>
+<li>利用一个非线性的映射把原数据集中的向量点转化到一个更高维度的空间中</li>
+<li>在这个高维度的空间中找一个线性的超平面来根据线性可分的情况处理</li>
+</ol>
+<blockquote>
+<p>如图所示<br><img src="/image/article/ml_note/svm/2.jpg" alt="image"></p>
+</blockquote>
+<h4 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h4><p>在线性SVM中转化为最优化问题时求解的公式计算都是以内积(dot product)的形式出现的，因为内积的算法复杂度非常大，所以我们利用核函数来取代计算非线性映射函数的内积</p>
+<p>常用的核函数(kernel functions)</p>
+<ol>
+<li>多项式核函数(polynomial kernel of degree h)：            </li>
+<li>高斯径向基核函数(Gaussian radial basis function kernel):  </li>
+<li>S型核函数(Sigmoid function kernel):                               </li>
+</ol>
+<p>如何选择使用哪个kernel？</p>
+<ol>
+<li>根据先验知识，比如图像分类，通常使用RBF，文字不使用RBF</li>
+<li>尝试不同的kernel，根据结果准确度而定</li>
+</ol>
+<h3 id="SVM特点"><a href="#SVM特点" class="headerlink" title="SVM特点"></a>SVM特点</h3><p>优点：</p>
+<ol>
+<li>训练好的模型的算法复杂度是由支持向量的个数决定的，而不是由数据的维度决定的。所以SVM不太容易产生overfitting</li>
+<li>SVM训练出来的模型完全依赖于支持向量(Support Vectors), 即使训练集里面所有非支持向量的点都被去除，重复训练过程，结果仍然会得到完全一样的模型。</li>
+<li>一个SVM如果训练得出的支持向量个数比较小，SVM训练出的模型比较容易被泛化。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>SVM对大规模样本难以实施</li>
+<li>SVM解决多分类问题存在困难</li>
+</ol>
+<h3 id="Python实践"><a href="#Python实践" class="headerlink" title="Python实践"></a>Python实践</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">from __future__ import print_function</div><div class="line">import numpy as np</div><div class="line">import pylab as pl</div><div class="line">from sklearn import svm</div><div class="line"></div><div class="line"># 随机创建40个点</div><div class="line">X = np.r_[np.random.randn(20, 2) - [2, 2], np.random.randn(20, 2) + [2, 2]]</div><div class="line">Y = [0]*20 +[1]*20</div><div class="line"></div><div class="line"># 使用线性核函数训练模型</div><div class="line">clf = svm.SVC(kernel=&apos;linear&apos;)</div><div class="line">clf.fit(X, Y)</div><div class="line"></div><div class="line"># 可视化过程</div><div class="line">w = clf.coef_[0]</div><div class="line">a = -w[0]/w[1]</div><div class="line">xx = np.linspace(-5, 5)</div><div class="line">yy = a*xx - (clf.intercept_[0])/w[1]</div><div class="line"></div><div class="line">b = clf.support_vectors_[0]</div><div class="line">yy_down = a*xx + (b[1] - a*b[0])</div><div class="line">b = clf.support_vectors_[-1]</div><div class="line">yy_up = a*xx + (b[1] - a*b[0])</div><div class="line"></div><div class="line">print(&quot;w: &quot;, w)</div><div class="line">print(&quot;a: &quot;, a)</div><div class="line"></div><div class="line">print(&quot;support_vectors_: &quot;, clf.support_vectors_)</div><div class="line">print(&quot;clf.coef_: &quot;, clf.coef_)</div><div class="line"></div><div class="line"># plot the line, the points, and the nearest vectors to the plane</div><div class="line">pl.plot(xx, yy, &apos;k-&apos;)</div><div class="line">pl.plot(xx, yy_down, &apos;k--&apos;)</div><div class="line">pl.plot(xx, yy_up, &apos;k--&apos;)</div><div class="line"></div><div class="line">pl.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1],</div><div class="line">          s=80, facecolors=&apos;none&apos;)</div><div class="line">pl.scatter(X[:, 0], X[:, 1], c=Y, cmap=pl.cm.Paired)</div><div class="line"></div><div class="line">pl.axis(&apos;tight&apos;)</div><div class="line">pl.show()</div></pre></td></tr></table></figure>
+<p>运行结果</p>
+<p><img src="/image/article/ml_note/svm/result.jpg" alt="image"></p>
+<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>到此，SVM算法介绍完毕</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/学习笔记（二）tensorflow神经网络前向传播算法/" itemprop="url">
-              
-                <span itemprop="name">学习笔记（二）tensorflow神经网络前向传播算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T20:01:15+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/image/reward/wechat.jpg" alt="半醉残影 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/image/reward/alipay.jpg" alt="半醉残影 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/人工智能/" rel="tag"># 人工智能</a>
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/13/机器学习笔记（二）K-NN算法（最邻近规则分类）/" rel="next" title="机器学习笔记（二）K-NN算法（最邻近规则分类）">
+                <i class="fa fa-chevron-left"></i> 机器学习笔记（二）K-NN算法（最邻近规则分类）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/20/学习笔记（一）tensorflow+jupyter交互式环境搭建/" rel="prev" title="学习笔记（一）tensorflow+jupyter交互式环境搭建">
+                学习笔记（一）tensorflow+jupyter交互式环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -514,6 +590,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDk0NS83NDk0"></div>
+    
+  </div>
+
 
         </div>
         
@@ -534,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -614,6 +705,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM支持向量机"><span class="nav-number">1.</span> <span class="nav-text">SVM支持向量机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法原理"><span class="nav-number">1.2.1.</span> <span class="nav-text">算法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性不可分"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">线性不可分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核方法"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">核方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM特点"><span class="nav-number">1.2.2.</span> <span class="nav-text">SVM特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python实践"><span class="nav-number">1.2.3.</span> <span class="nav-text">Python实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结束"><span class="nav-number">1.2.4.</span> <span class="nav-text">结束</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -750,6 +857,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -778,6 +889,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
