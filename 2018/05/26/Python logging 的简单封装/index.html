@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="TensorFlow,深度学习,人工智能,机器学习,神经网络," />
+  <meta name="keywords" content="Python,组件," />
 
 
 
@@ -99,21 +99,20 @@
 
 
 
-<meta name="description" content="前言在使用TensorFlow中训练好一个模型之后，往往需要将权值，偏置等数据保存，以便在今后再跑模型时候不需要再次训练。 TensorFlow目前提供了一套保存以及恢复模型数据的接口方法。">
-<meta name="keywords" content="TensorFlow,深度学习,人工智能,机器学习,神经网络">
+<meta name="description" content="Python logging前言平时在Python程序中记录程序运行情况或者打印各种重要数据总是用“print”语句很多时候不方便，因为它只能把日志打印在屏幕上，并且不能分级显示。于是乎我对Python社区提供的一个功能强大的标准日志模块进行了封装，以便更加方便的使用。">
+<meta name="keywords" content="Python,组件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习笔记（七）tensorflow保存读取">
-<meta property="og:url" content="http://yoursite.com/2017/12/30/学习笔记（七）tensorflow保存读取/index.html">
+<meta property="og:title" content="Python logging 的简单封装">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/Python logging 的简单封装/index.html">
 <meta property="og:site_name" content="人工智能随笔">
-<meta property="og:description" content="前言在使用TensorFlow中训练好一个模型之后，往往需要将权值，偏置等数据保存，以便在今后再跑模型时候不需要再次训练。 TensorFlow目前提供了一套保存以及恢复模型数据的接口方法。">
+<meta property="og:description" content="Python logging前言平时在Python程序中记录程序运行情况或者打印各种重要数据总是用“print”语句很多时候不方便，因为它只能把日志打印在屏幕上，并且不能分级显示。于是乎我对Python社区提供的一个功能强大的标准日志模块进行了封装，以便更加方便的使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/07/head.jpg">
-<meta property="og:image" content="http://yoursite.com/image/article/tensorflow_note/07/save_file.jpg">
-<meta property="og:updated_time" content="2017-12-30T14:05:33.428Z">
+<meta property="og:image" content="http://yoursite.com/image/article/python/log/head.jpg">
+<meta property="og:updated_time" content="2018-06-09T03:19:24.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习笔记（七）tensorflow保存读取">
-<meta name="twitter:description" content="前言在使用TensorFlow中训练好一个模型之后，往往需要将权值，偏置等数据保存，以便在今后再跑模型时候不需要再次训练。 TensorFlow目前提供了一套保存以及恢复模型数据的接口方法。">
-<meta name="twitter:image" content="http://yoursite.com/image/article/tensorflow_note/07/head.jpg">
+<meta name="twitter:title" content="Python logging 的简单封装">
+<meta name="twitter:description" content="Python logging前言平时在Python程序中记录程序运行情况或者打印各种重要数据总是用“print”语句很多时候不方便，因为它只能把日志打印在屏幕上，并且不能分级显示。于是乎我对Python社区提供的一个功能强大的标准日志模块进行了封装，以便更加方便的使用。">
+<meta name="twitter:image" content="http://yoursite.com/image/article/python/log/head.jpg">
 
 
 
@@ -143,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/30/学习笔记（七）tensorflow保存读取/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/Python logging 的简单封装/"/>
 
 
 
 
 
-  <title>学习笔记（七）tensorflow保存读取 | 人工智能随笔</title>
+  <title>Python logging 的简单封装 | 人工智能随笔</title>
   
 
 
@@ -310,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/学习笔记（七）tensorflow保存读取/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/Python logging 的简单封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半醉残影">
@@ -327,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学习笔记（七）tensorflow保存读取</h1>
+          <h1 class="post-title" itemprop="name headline">Python logging 的简单封装</h1>
         
 
         <div class="post-meta">
@@ -339,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-30T21:33:39+08:00">
-                2017-12-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T21:04:15+08:00">
+                2018-05-26
               </time>
             
 
@@ -362,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TensorFlow笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow笔记</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -379,7 +378,7 @@
 
           
           
-             <span id="/2017/12/30/学习笔记（七）tensorflow保存读取/" class="leancloud_visitors" data-flag-title="学习笔记（七）tensorflow保存读取">
+             <span id="/2018/05/26/Python logging 的简单封装/" class="leancloud_visitors" data-flag-title="Python logging 的简单封装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,33 +410,16 @@
 
       
         <!--配图-->
-<p><img src="/image/article/tensorflow_note/07/head.jpg" alt="image"></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在使用TensorFlow中训练好一个模型之后，往往需要将权值，偏置等数据保存，以便在今后再跑模型时候不需要再次训练。</p>
-<p>TensorFlow目前提供了一套保存以及恢复模型数据的接口方法。</p>
+<p><img src="/image/article/python/log/head.jpg" alt="image"></p>
+<h1 id="Python-logging"><a href="#Python-logging" class="headerlink" title="Python logging"></a>Python logging</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时在Python程序中记录程序运行情况或者打印各种重要数据总是用“print”语句很多时候不方便，因为它只能把日志打印在屏幕上，并且不能分级显示。于是乎我对Python社区提供的一个功能强大的标准日志模块进行了封装，以便更加方便的使用。</p>
 <a id="more"></a>
-<h3 id="简单说明保存读取"><a href="#简单说明保存读取" class="headerlink" title="简单说明保存读取"></a>简单说明保存读取</h3><h4 id="保存"><a href="#保存" class="headerlink" title="保存"></a>保存</h4><p>为了简便操作以及理解，定义申明两个变量，权值和偏置，然后把数据保存起来。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">W = tf.Variable([[<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>],[<span class="number">9</span>,<span class="number">8</span>,<span class="number">5</span>]], dtype=tf.float32, name=<span class="string">'weights'</span>)</div><div class="line">B = tf.Variable([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]], dtype=tf.float32, name=<span class="string">'biases'</span>)</div><div class="line"></div><div class="line">init=tf.global_variables_initializer()</div><div class="line"><span class="comment">##</span></div><div class="line">saver = tf.train.Saver()</div><div class="line"></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    sess.run(init)</div><div class="line">    save_path = saver.save(sess, <span class="string">"config/save.ckpt"</span>)</div><div class="line">    print(<span class="string">"Save to path: "</span>, save_path)</div></pre></td></tr></table></figure>
-<blockquote>
-<p>输出</p>
-</blockquote>
-<pre><code>Save to path:  config/save.ckpt
-</code></pre><blockquote>
-<p>保存目录下的文件</p>
-</blockquote>
-<p><img src="/image/article/tensorflow_note/07/save_file.jpg" alt="image"></p>
-<h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>恢复的时候定义的数据的结构必须和保存的时候的结构一致，不仅需要一致，而且数据类型也必须相同。</p>
-<p>比如，刚刚上边用的dtype=tf.float32，这里恢复的时候也必须使用dtype=tf.float32，name也需要和保存的时候一样。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">W2 = tf.Variable(np.arange(<span class="number">6</span>).reshape((<span class="number">2</span>, <span class="number">3</span>)), dtype=tf.float32, name=<span class="string">"weights"</span>)</div><div class="line">B2 = tf.Variable(np.arange(<span class="number">3</span>).reshape((<span class="number">1</span>, <span class="number">3</span>)), dtype=tf.float32, name=<span class="string">"biases"</span>)</div></pre></td></tr></table></figure>
-<p>这里我们不需要再对数据进行初始化了，我们直接加载保存的数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">saver = tf.train.Saver()</div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    saver.restore(sess, <span class="string">"config/save.ckpt"</span>)</div><div class="line">    print(<span class="string">"weights:"</span>, sess.run(W2))</div><div class="line">    print(<span class="string">"biases:"</span>, sess.run(B2))</div></pre></td></tr></table></figure>
-<blockquote>
-<p>输出</p>
-</blockquote>
-<pre><code>INFO:tensorflow:Restoring parameters from config/save.ckpt
-weights: [[ 3.  2.  1.]
- [ 9.  8.  5.]]
-biases: [[ 1.  2.  3.]]
-</code></pre>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>废话不多说，直接上代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> logging.handlers</div><div class="line"><span class="keyword">import</span> logging,os</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, path = <span class="string">'./test.log'</span>,clevel = logging.DEBUG,Flevel = logging.DEBUG)</span>:</span></div><div class="line">    self.logger = logging.getLogger(path)</div><div class="line">    self.logger.setLevel(logging.DEBUG)</div><div class="line">    fmt = logging.Formatter(<span class="string">'%(asctime)s|%(levelname)s|%(message)s'</span>)</div><div class="line">    </div><div class="line">    sh = logging.StreamHandler()</div><div class="line">    sh.setFormatter(fmt)</div><div class="line">    sh.setLevel(clevel)</div><div class="line">    </div><div class="line">    fh = logging.handlers.RotatingFileHandler(path, maxBytes=<span class="number">10</span>*<span class="number">1024</span>, backupCount=<span class="number">50</span>)</div><div class="line">    fh.encoding=<span class="string">"utf-8"</span></div><div class="line">    fh.setFormatter(fmt)</div><div class="line">    fh.setLevel(Flevel)</div><div class="line">    self.logger.addHandler(sh)</div><div class="line">    self.logger.addHandler(fh)</div><div class="line"> </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">debug</span><span class="params">(self,message)</span>:</span></div><div class="line">    self.logger.debug(message)</div><div class="line">   </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">info</span><span class="params">(self,message)</span>:</span></div><div class="line">    self.logger.info(message)</div><div class="line">   </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">war</span><span class="params">(self,message)</span>:</span></div><div class="line">    self.logger.warn(message)</div><div class="line">   </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">error</span><span class="params">(self,message)</span>:</span></div><div class="line">    self.logger.error(message)</div><div class="line">   </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">cri</span><span class="params">(self,message)</span>:</span></div><div class="line">    self.logger.critical(message)</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></div><div class="line">  log_test = Logger(<span class="string">'./test.log'</span>,logging.DEBUG,logging.DEBUG)</div><div class="line">  log_test.debug(<span class="string">'test log'</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ ==<span class="string">'__main__'</span>:</div><div class="line">  test()</div></pre></td></tr></table></figure>
+<p>如果直接在log中运行程序，结果如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python ./log.py</div><div class="line"></div><div class="line"><span class="meta">#</span> 2018-05-26 21:58:53,304|DEBUG|test log</div></pre></td></tr></table></figure>
+<p>这个时候说明程序没有问题，可以当作模块使用了，于是乎你可以在其他模块中调用它了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line">sys.path.append(<span class="string">"../.."</span>)</div><div class="line"><span class="keyword">from</span> BinLog.log <span class="keyword">import</span> Logger</div><div class="line"></div><div class="line"><span class="comment"># Logger('./test.log',logging.DEBUG,logging.DEBUG)</span></div><div class="line">x = Logger()</div><div class="line">x.debug(<span class="string">"hello1"</span>)</div><div class="line">x.debug(<span class="string">"hello2"</span>)</div><div class="line">x.debug(<span class="string">"hello3"</span>)</div><div class="line">x.debug(<span class="string">"hello4"</span>)</div><div class="line">x.debug(<span class="string">"hello5"</span>)</div><div class="line">x.debug(<span class="string">"hello6"</span>)</div></pre></td></tr></table></figure>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
       
     </div>
     
@@ -483,15 +465,9 @@ biases: [[ 1.  2.  3.]]
       
         <div class="post-tags">
           
-            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
-          
-            <a href="/tags/人工智能/" rel="tag"># 人工智能</a>
-          
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
+            <a href="/tags/组件/" rel="tag"># 组件</a>
           
         </div>
       
@@ -504,8 +480,8 @@ biases: [[ 1.  2.  3.]]
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/30/学习笔记（六）tensorflow可视化tensorboard/" rel="next" title="学习笔记（六）TensorFlow可视化TensorBoard">
-                <i class="fa fa-chevron-left"></i> 学习笔记（六）TensorFlow可视化TensorBoard
+              <a href="/2017/12/30/学习笔记（七）tensorflow保存读取/" rel="next" title="学习笔记（七）tensorflow保存读取">
+                <i class="fa fa-chevron-left"></i> 学习笔记（七）tensorflow保存读取
               </a>
             
           </div>
@@ -513,10 +489,6 @@ biases: [[ 1.  2.  3.]]
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/26/Python logging 的简单封装/" rel="prev" title="Python logging 的简单封装">
-                Python logging 的简单封装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -707,7 +679,7 @@ biases: [[ 1.  2.  3.]]
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单说明保存读取"><span class="nav-number">2.</span> <span class="nav-text">简单说明保存读取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#保存"><span class="nav-number">2.1.</span> <span class="nav-text">保存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复"><span class="nav-number">2.2.</span> <span class="nav-text">恢复</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-logging"><span class="nav-number">1.</span> <span class="nav-text">Python logging</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#END"><span class="nav-number">1.3.</span> <span class="nav-text">END</span></a></li></ol></li></ol></div>
             
 
           </div>
