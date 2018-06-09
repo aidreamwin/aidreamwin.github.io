@@ -108,7 +108,7 @@
 <meta property="og:description" content="Python logging前言平时在Python程序中记录程序运行情况或者打印各种重要数据总是用“print”语句很多时候不方便，因为它只能把日志打印在屏幕上，并且不能分级显示。于是乎我对Python社区提供的一个功能强大的标准日志模块进行了封装，以便更加方便的使用。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/image/article/python/log/head.jpg">
-<meta property="og:updated_time" content="2018-06-09T03:19:24.814Z">
+<meta property="og:updated_time" content="2018-06-09T03:43:37.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python logging 的简单封装">
 <meta name="twitter:description" content="Python logging前言平时在Python程序中记录程序运行情况或者打印各种重要数据总是用“print”语句很多时候不方便，因为它只能把日志打印在屏幕上，并且不能分级显示。于是乎我对Python社区提供的一个功能强大的标准日志模块进行了封装，以便更加方便的使用。">
@@ -419,7 +419,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python ./log.py</div><div class="line"></div><div class="line"><span class="meta">#</span> 2018-05-26 21:58:53,304|DEBUG|test log</div></pre></td></tr></table></figure>
 <p>这个时候说明程序没有问题，可以当作模块使用了，于是乎你可以在其他模块中调用它了。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line">sys.path.append(<span class="string">"../.."</span>)</div><div class="line"><span class="keyword">from</span> BinLog.log <span class="keyword">import</span> Logger</div><div class="line"></div><div class="line"><span class="comment"># Logger('./test.log',logging.DEBUG,logging.DEBUG)</span></div><div class="line">x = Logger()</div><div class="line">x.debug(<span class="string">"hello1"</span>)</div><div class="line">x.debug(<span class="string">"hello2"</span>)</div><div class="line">x.debug(<span class="string">"hello3"</span>)</div><div class="line">x.debug(<span class="string">"hello4"</span>)</div><div class="line">x.debug(<span class="string">"hello5"</span>)</div><div class="line">x.debug(<span class="string">"hello6"</span>)</div></pre></td></tr></table></figure>
-<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>项目地址 GitHub: <a href="https://github.com/aidreamwin/pywheel.git" target="_blank" rel="noopener">https://github.com/aidreamwin/pywheel.git</a></p>
+
       
     </div>
     
@@ -679,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-logging"><span class="nav-number">1.</span> <span class="nav-text">Python logging</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#END"><span class="nav-number">1.3.</span> <span class="nav-text">END</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-logging"><span class="nav-number">1.</span> <span class="nav-text">Python logging</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">1.3.</span> <span class="nav-text">结尾</span></a></li></ol></li></ol></div>
             
 
           </div>
